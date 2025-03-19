@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing Alat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>Hashing App</h1>
+
+
+    <textarea id="inputText" rows="4" placeholder="Unesite tekst..."></textarea>
+
+    <button onclick="hashText()">Generiši Hash</button>
+
+
+    <div class="results">
+        <div id="sha2Result" class="result-box">
+            <h3>SHA-2 Hash:</h3>
+            <p></p>
+        </div>
+        <div id="sha3Result" class="result-box">
+            <h3>SHA-3 Hash:</h3>
+            <p></p>
+        </div>
+    </div>
+
+
+    <div class="tabs">
+        <button onclick="loadContent('analiza')">Analiza</button>
+        <button onclick="loadContent('sigurnost')">Sigurnost</button>
+        <button onclick="loadContent('razlike')">Razlike SHA-2 i SHA-3</button>
+    </div>
+
+    <div id="dynamicContent" class="dynamic-content">
+
+    </div>
+</div>
+</body>
+</html>
