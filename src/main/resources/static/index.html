@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing Alat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+<div class="container">
+
+
+    <h1>Hashing App</h1>
+
+    <textarea id="inputText" rows="4" placeholder="Unesite tekst..."></textarea>
+    <button onclick="hashText()">Generiši Hash</button>
+
+    <div class="results">
+        <div id="sha2Result" class="result-box">
+            <h3>SHA-2 Hash:</h3>
+            <p></p>
+            <p id="sha2Duration"></p>
+        </div>
+        <div id="sha3Result" class="result-box">
+            <h3>SHA-3 Hash:</h3>
+            <p></p>
+            <p id="sha3Duration"></p>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button onclick="loadContent('analiza')">Analiza</button>
+        <button onclick="loadContent('sigurnost')">Sigurnost</button>
+        <button onclick="loadContent('razlike')">Razlike SHA-2 i SHA-3</button>
+    </div>
+
+    <div id="dynamicContent" class="dynamic-content"></div>
+
+
+    <canvas id="speedChart" width="400" height="200"></canvas>
+
+
+    <div id="analysisContent" class="hidden">
+        <h2>Analiza</h2>
+        <p>..</p>
+    </div>
+
+    <div id="securityContent" class="hidden">
+        <h2>Sigurnost</h2>
+        <p>Sigurnost SHA-2 i SHA-3 algoritama igra ključnu ulogu u zaštiti podataka. SHA-2 je bio dugo vremena standard u industriji, ali SHA-3 je dizajniran da bude sigurniji i otporniji na napade kao što je napad na osnovu slabosti u SHA-2 strukturi. Razumevanje razlika između ova dva algoritma pomaže u odabiru odgovarajuće opcije za različite sigurnosne potrebe.</p>
+    </div>
+
+
+    <div id="differenceContent" class="hidden">
+        <h2>Razlike između SHA-2 i SHA-3</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Karakteristika</th>
+                <th>SHA-2</th>
+                <th>SHA-3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Struktura</td>
+                <td>Merkle–Damgård</td>
+                <td>Keccak</td>
+            </tr>
+            <tr>
+                <td>Bezbednost</td>
+                <td>Bezbedan, ali podložan napadima na osnovu ranjivosti u dizajnu</td>
+                <td>Otporan na napade kao što je napad u vezi sa SHA-2</td>
+            </tr>
+            <tr>
+                <td>Brzina</td>
+                <td>Brži za većinu aplikacija</td>
+                <td>Može biti sporiji u određenim slučajevima, ali s boljom otpornosti na napade</td>
+            </tr>
+            <tr>
+                <td>Primene</td>
+                <td>Široko korišćen u industriji</td>
+                <td>Noviji, koristi se u specifičnim scenarijima gde je potrebna veća sigurnost</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+</body>
+</html>
